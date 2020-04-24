@@ -1,0 +1,17 @@
+[
+    {
+        "compilation_database": [
+            "build_s2opc",
+            "build_mbedtls",
+            "build_expat",
+            "build_libcheck"
+        ],
+        "files": [
+            "../tests/ClientServer/unit_tests/helpers/check_helpers.c",
+            "../tests/ClientServer/unit_tests/helpers/check_crypto_B256S256.c",
+            "check/src/check.c",
+            "check/src/check_error.c",
+            "check/src/check_list.c"
+        ]
+    }
+]
