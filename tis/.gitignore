@@ -1,0 +1,5 @@
+prefix/bin
+prefix/lib
+prefix/share
+build_*/*
+!build_*compile_commands.json
