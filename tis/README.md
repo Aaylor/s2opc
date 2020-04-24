@@ -25,6 +25,8 @@ Now create our `tis` branch and the `tis` directory:
 ```
 $ git checkout -b tis
 $ git push -u origin tis
+$ PROJECT_ROOT=$PWD
+
 $ mkdir tis
 $ cd tis
 
@@ -61,7 +63,7 @@ After that, the sub-module should be clean
 ### libcheck
 
 ```
-$ cd $PREFIX/..
+$ cd $PROJECT_ROOT/tis
 $ git submodule add https://github.com/libcheck/check.git
 $ cd check ; git checkout 0.14.0 ; cd ..
 $ git add check
@@ -80,7 +82,7 @@ $ tis-prepare clean
 ### mbedtls
 
 ```
-$ cd $PREFIX/..
+$ cd $PROJECT_ROOT/tis
 $ git submodule add https://github.com/ARMmbed/mbedtls.git
 $ cd mbedtls ; git checkout mbedtls-2.12.0 ; cd ..
 $ git add mbedtls
@@ -99,7 +101,7 @@ $ tis-prepare clean
 ### libexpat
 
 ```
-$ cd $PREFIX/..
+$ cd $PROJECT_ROOT/tis
 $ git submodule add https://github.com/libexpat/libexpat.git
 $ cd libexpat ; git checkout R_2_2_9 ; cd ..
 $ git add libexpat
@@ -123,7 +125,7 @@ Now that all the dependencies are installed,
 S2OPC can be compiled, and its symbol table generated.
 
 ```
-$ cd $PREFIX/..
+$ cd $PROJECT_ROOT/tis
 $ mkdir build_s2opc && cd build_s2opc
 $ cmake ../.. -DCMAKE_EXPORT_COMPILE_COMMANDS=On \
               -DCMAKE_INSTALL_PREFIX=$PREFIX \
@@ -135,6 +137,16 @@ $ tis-prepare clean
 
 ```
 [INFO] Summary: 280+63/345 (99%) [OK+CACHED]   0/345 (0%) [SKIPPED]   2/345 (0%) [FAIL]
+```
+
+## Register files into git
+
+The path in the `compile_commands.json` files have to be fixed to be relative:
+
+```
+$ cd $PROJECT_ROOT/tis
+$ sed -i 's=$PROJECT_ROOT=../..=g' build_*/compile_commands.json
+$ sed -i '/"directory"/s/.*/"directory": ".",/' build_*/compile_commands.json
 ```
 
 ## S2OPC test configuration
@@ -158,7 +170,7 @@ because it probably does not request a complex analysis.
 
 To generate the configuration for this test:
 ```
-$ cd $PREFIX/..
+$ cd $PROJECT_ROOT/tis
 $ tis-prepare tis-config check_helpers.config -- --interpreter
 ```
 with `check_helpers.config`:
@@ -179,5 +191,27 @@ check/src/check_list.c:71:[value] warning: invalid pointer {{ &__malloc_emalloc_
 ```
 
 Indeed, there is a call to `memmove (p,q,0);` with `p` past-one
-that has to be fixed.
+that has to be fixed. So now, we need to fork `check` to do the modification
+(see below for the instructions).
+
+# Fork a dependency
+
+When a problem has been found in a dependency that has to be fixed
+to go further, it has to be forked in a repository that can be modified
+by us.
+
+First check whether the sources has already been forked for other projects
+(those forked repositories have often been named `xxx-sources`)
+and create the repository if it does not exist yet.
+
+For instance, here is how to fix the `check` library.
+
+```
+$ cd $PROJECT_ROOT/tis/check
+$ git remote rename origin upstream
+$ git remote add origin \
+             ssh://git@git.trust-in-soft.com:7999/use/libcheck-sources.git
+```
+
+TODO: to be finished...
 

@@ -1,6 +1,13 @@
 prefix/bin
 prefix/lib
 prefix/share
-build_*/*
-!build_*compile_commands.json
+
 *.config_generated.json
+
+build_*/*
+!build_*/compile_commands.json
+!build_libcheck/config.h
+!build_libcheck/check_stdint.h
+!build_libcheck/src
+build_libcheck/src/*
+!build_libcheck/src/check.h

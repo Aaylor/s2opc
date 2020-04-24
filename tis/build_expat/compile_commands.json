@@ -1,47 +1,47 @@
 [
 {
-  "directory": "/home/anne/GitTis/USE/S2OPC/tis/build_expat",
-  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I/home/anne/GitTis/USE/S2OPC/tis/build_expat -I/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/outline.dir/examples/outline.c.o   -c /home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/examples/outline.c",
-  "file": "/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/examples/outline.c"
+"directory": ".",
+  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I../../tis/build_expat -I../../tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/outline.dir/examples/outline.c.o   -c ../../tis/libexpat/expat/examples/outline.c",
+  "file": "../../tis/libexpat/expat/examples/outline.c"
 },
 {
-  "directory": "/home/anne/GitTis/USE/S2OPC/tis/build_expat",
-  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -Dexpat_EXPORTS -I/home/anne/GitTis/USE/S2OPC/tis/build_expat -I/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden -fPIC   -o CMakeFiles/expat.dir/lib/xmlparse.c.o   -c /home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib/xmlparse.c",
-  "file": "/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib/xmlparse.c"
+"directory": ".",
+  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -Dexpat_EXPORTS -I../../tis/build_expat -I../../tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden -fPIC   -o CMakeFiles/expat.dir/lib/xmlparse.c.o   -c ../../tis/libexpat/expat/lib/xmlparse.c",
+  "file": "../../tis/libexpat/expat/lib/xmlparse.c"
 },
 {
-  "directory": "/home/anne/GitTis/USE/S2OPC/tis/build_expat",
-  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -Dexpat_EXPORTS -I/home/anne/GitTis/USE/S2OPC/tis/build_expat -I/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden -fPIC   -o CMakeFiles/expat.dir/lib/xmlrole.c.o   -c /home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib/xmlrole.c",
-  "file": "/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib/xmlrole.c"
+"directory": ".",
+  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -Dexpat_EXPORTS -I../../tis/build_expat -I../../tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden -fPIC   -o CMakeFiles/expat.dir/lib/xmlrole.c.o   -c ../../tis/libexpat/expat/lib/xmlrole.c",
+  "file": "../../tis/libexpat/expat/lib/xmlrole.c"
 },
 {
-  "directory": "/home/anne/GitTis/USE/S2OPC/tis/build_expat",
-  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -Dexpat_EXPORTS -I/home/anne/GitTis/USE/S2OPC/tis/build_expat -I/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden -fPIC   -o CMakeFiles/expat.dir/lib/xmltok.c.o   -c /home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib/xmltok.c",
-  "file": "/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib/xmltok.c"
+"directory": ".",
+  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -Dexpat_EXPORTS -I../../tis/build_expat -I../../tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden -fPIC   -o CMakeFiles/expat.dir/lib/xmltok.c.o   -c ../../tis/libexpat/expat/lib/xmltok.c",
+  "file": "../../tis/libexpat/expat/lib/xmltok.c"
 },
 {
-  "directory": "/home/anne/GitTis/USE/S2OPC/tis/build_expat",
-  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I/home/anne/GitTis/USE/S2OPC/tis/build_expat -I/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/elements.dir/examples/elements.c.o   -c /home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/examples/elements.c",
-  "file": "/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/examples/elements.c"
+"directory": ".",
+  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I../../tis/build_expat -I../../tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/elements.dir/examples/elements.c.o   -c ../../tis/libexpat/expat/examples/elements.c",
+  "file": "../../tis/libexpat/expat/examples/elements.c"
 },
 {
-  "directory": "/home/anne/GitTis/USE/S2OPC/tis/build_expat",
-  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I/home/anne/GitTis/USE/S2OPC/tis/build_expat -I/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/xmlwf.dir/xmlwf/xmlwf.c.o   -c /home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/xmlwf/xmlwf.c",
-  "file": "/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/xmlwf/xmlwf.c"
+"directory": ".",
+  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I../../tis/build_expat -I../../tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/xmlwf.dir/xmlwf/xmlwf.c.o   -c ../../tis/libexpat/expat/xmlwf/xmlwf.c",
+  "file": "../../tis/libexpat/expat/xmlwf/xmlwf.c"
 },
 {
-  "directory": "/home/anne/GitTis/USE/S2OPC/tis/build_expat",
-  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I/home/anne/GitTis/USE/S2OPC/tis/build_expat -I/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/xmlwf.dir/xmlwf/xmlfile.c.o   -c /home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/xmlwf/xmlfile.c",
-  "file": "/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/xmlwf/xmlfile.c"
+"directory": ".",
+  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I../../tis/build_expat -I../../tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/xmlwf.dir/xmlwf/xmlfile.c.o   -c ../../tis/libexpat/expat/xmlwf/xmlfile.c",
+  "file": "../../tis/libexpat/expat/xmlwf/xmlfile.c"
 },
 {
-  "directory": "/home/anne/GitTis/USE/S2OPC/tis/build_expat",
-  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I/home/anne/GitTis/USE/S2OPC/tis/build_expat -I/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/xmlwf.dir/xmlwf/codepage.c.o   -c /home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/xmlwf/codepage.c",
-  "file": "/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/xmlwf/codepage.c"
+"directory": ".",
+  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I../../tis/build_expat -I../../tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/xmlwf.dir/xmlwf/codepage.c.o   -c ../../tis/libexpat/expat/xmlwf/codepage.c",
+  "file": "../../tis/libexpat/expat/xmlwf/codepage.c"
 },
 {
-  "directory": "/home/anne/GitTis/USE/S2OPC/tis/build_expat",
-  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I/home/anne/GitTis/USE/S2OPC/tis/build_expat -I/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/xmlwf.dir/xmlwf/readfilemap.c.o   -c /home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/xmlwf/readfilemap.c",
-  "file": "/home/anne/GitTis/USE/S2OPC/tis/libexpat/expat/xmlwf/readfilemap.c"
+"directory": ".",
+  "command": "/usr/bin/cc -DHAVE_EXPAT_CONFIG_H -DXML_ENABLE_VISIBILITY=1 -I../../tis/build_expat -I../../tis/libexpat/expat/lib    -fno-strict-aliasing -fvisibility=hidden   -o CMakeFiles/xmlwf.dir/xmlwf/readfilemap.c.o   -c ../../tis/libexpat/expat/xmlwf/readfilemap.c",
+  "file": "../../tis/libexpat/expat/xmlwf/readfilemap.c"
 }
 ]
