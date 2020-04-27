@@ -482,7 +482,7 @@ static void __testname ## _fn (int _i CK_ATTRIBUTE_UNUSED)
  * the function as noreturn causes gcc to make assumptions
  * which are not valid, as longjmp() is like a return.
  */
-#if 1
+#if 0
 CK_DLL_EXP void CK_EXPORT _ck_assert_failed(const char *file, int line,
                                             const char *expr,
                                             ...) CK_ATTRIBUTE_NORETURN;
