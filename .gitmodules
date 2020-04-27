@@ -1,6 +1,6 @@
 [submodule "tis/check"]
 	path = tis/check
-	url = https://github.com/libcheck/check.git
+	url = https://github.com/anne-pacalet/check.git
 [submodule "tis/mbedtls"]
 	path = tis/mbedtls
 	url = https://github.com/ARMmbed/mbedtls.git
