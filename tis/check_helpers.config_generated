@@ -7,11 +7,48 @@
             "build_libcheck"
         ],
         "files": [
+            "tis_stubs.c",
             "../tests/ClientServer/unit_tests/helpers/check_helpers.c",
             "../tests/ClientServer/unit_tests/helpers/check_crypto_B256S256.c",
             "check/src/check.c",
             "check/src/check_error.c",
-            "check/src/check_list.c"
-        ]
+            "check/src/check_list.c",
+            "../tests/ClientServer/unit_tests/helpers/check_crypto_B256.c",
+            "../tests/ClientServer/unit_tests/helpers/check_crypto_None.c",
+            "../tests/ClientServer/unit_tests/helpers/check_crypto_PubSub256.c",
+            "../tests/ClientServer/unit_tests/helpers/check_crypto_tools.c",
+            "../tests/ClientServer/unit_tests/helpers/check_tools.c",
+            "../tests/ClientServer/unit_tests/helpers/check_threads.c",
+            "../tests/ClientServer/unit_tests/helpers/check_time.c",
+            "../tests/ClientServer/unit_tests/helpers/check_filesystem.c",
+            "../tests/ClientServer/unit_tests/helpers/check_timers.c",
+            "../tests/ClientServer/unit_tests/helpers/check_logger.c",
+            "../tests/ClientServer/unit_tests/helpers/check_dict.c",
+            "check/src/check_run.c",
+            "../tests/ClientServer/unit_tests/helpers/check_array.c",
+            "../tests/ClientServer/unit_tests/helpers/check_event_handler.c",
+            "../tests/ClientServer/unit_tests/helpers/check_numeric_range.c",
+            "../tests/ClientServer/unit_tests/helpers/check_users.c",
+            "../tests/ClientServer/unit_tests/helpers/check_request_handle.c",
+            "../tests/ClientServer/unit_tests/helpers/check_encodeable_types.c",
+            "../tests/ClientServer/unit_tests/helpers/check_XML_parsers.c",
+            "check/src/check_log.c",
+            "check/src/check_msg.c",
+            "check/src/check_str.c",
+            "check/src/check_pack.c",
+            "../src/Common/crypto/sopc_crypto_provider.c",
+            "../src/Common/crypto/sopc_crypto_profiles.c",
+            "../src/Common/helpers/sopc_helper_string.c",
+            "../src/Common/helpers_platform_dep/linux/p_mem_alloc.c",
+            "../src/Common/crypto/mbedtls/crypto_provider_lib.c",
+            "mbedtls/library/entropy.c",
+            "mbedtls/library/sha512.c",
+            "mbedtls/library/ctr_drbg.c",
+            "mbedtls/library/aes.c",
+            "mbedtls/library/entropy_poll.c"
+        ],
+        "raw_options": {
+            "-val-warn-harmless-function-pointers": false
+        }
     }
 ]

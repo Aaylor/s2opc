@@ -232,7 +232,7 @@ typedef uint64_t uintmax_t;
 #define HAVE_ERRNO_H 1
 
 /* Define to 1 if you have the `fork' function. */
-#define HAVE_FORK 1
+/* #undef HAVE_FORK */
 
 /* Define to 1 if you have the `getpid' function. */
 #define HAVE_GETPID 1
@@ -268,7 +268,7 @@ typedef uint64_t uintmax_t;
 #define HAVE_SIGNAL_H 1
 
 /* Define to 1 if you have the 'sigaction' function. */
-#define HAVE_SIGACTION 1
+/* #undef HAVE_SIGACTION */
 
 /* Define to 1 if you have the <stdarg.h> header file. */
 #define HAVE_STDARG_H 1

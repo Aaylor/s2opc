@@ -87,8 +87,9 @@ $ git submodule add https://github.com/ARMmbed/mbedtls.git
 $ cd mbedtls ; git checkout mbedtls-2.12.0 ; cd ..
 $ git add mbedtls
 $ mkdir build_mbedtls && cd build_mbedtls
-$ cmake ../mbedtls -DCMAKE_EXPORT_COMPILE_COMMANDS=On \
-                   -DCMAKE_INSTALL_PREFIX=$PREFIX
+$ CFLAGS="-I$PROJECT_ROOT/tis -DMBEDTLS_CONFIG_FILE='<mbedtls.config.h>'" \
+    cmake ../mbedtls -DCMAKE_EXPORT_COMPILE_COMMANDS=On \
+                     -DCMAKE_INSTALL_PREFIX=$PREFIX
 $ make && make install
 $ tis-prepare all-symbol-table -- -64 -cpp-tool gcc
 $ tis-prepare clean
@@ -139,16 +140,6 @@ $ tis-prepare clean
 [INFO] Summary: 280+63/345 (99%) [OK+CACHED]   0/345 (0%) [SKIPPED]   2/345 (0%) [FAIL]
 ```
 
-## Register files into git
-
-The path in the `compile_commands.json` files have to be fixed to be relative:
-
-```
-$ cd $PROJECT_ROOT/tis
-$ sed -i 's=$PROJECT_ROOT=../..=g' build_*/compile_commands.json
-$ sed -i '/"directory"/s/.*/"directory": ".",/' build_*/compile_commands.json
-```
-
 ## S2OPC test configuration
 
 A `tis.config` file is created at the root of the repository
@@ -194,24 +185,67 @@ Indeed, there is a call to `memmove (p,q,0);` with `p` past-one
 that has to be fixed. So now, we need to fork `check` to do the modification
 (see below for the instructions).
 
+After having fixed the problem above, few more things ahve been done:
+- set `HAVE_FORK` and `HAVE_SIGACTION` to 0 in `check/CMakeLists.txt`
+- set `-val-warn-harmless-function-pointers` to `false`
+  in the config file
+- add `tis_stubs.c` to define `setjmp`
+- use a custom `mbedtls.config.h` file to undefine `MBEDTLS_HAVE_ASM`
+
+```
+$ cd $PROJECT_ROOT/tis
+$ tis-analyzer -tis-config-load check_helpers.config_generated --interpreter
+```
+
+
+# Register files into git
+
+The path in the `compile_commands.json` files have to be fixed to be relative:
+
+```
+$ cd $PROJECT_ROOT/tis
+$ sed -i "s=$PROJECT_ROOT=../..=g" build_*/compile_commands.json
+$ sed -i '/"directory"/s/.*/"directory": ".",/' build_*/compile_commands.json
+```
+
+Then all the `build_*/compile_commands.json` have to be added to git
+together with the `$PREFIX/include` directory.
+
+To make sure that it works:
+
+```
+$ cd $PROJECT_ROOT
+$ git clean -fxd
+$ tis-analyzer -tis-config-load tis.config --interpreter
+```
+
+Some `.h` were missing and had to be manually added to git.
+
 # Fork a dependency
 
 When a problem has been found in a dependency that has to be fixed
 to go further, it has to be forked in a repository that can be modified
 by us.
 
-First check whether the sources has already been forked for other projects
+First check whether the sources has already been forked in USE
+for other projects
 (those forked repositories have often been named `xxx-sources`)
 and create the repository if it does not exist yet.
+
+But in case of a tis-ci project, we need de public repository,
+so let's put it on GitHub.
 
 For instance, here is how to fix the `check` library.
 
 ```
 $ cd $PROJECT_ROOT/tis/check
 $ git remote rename origin upstream
-$ git remote add origin \
-             ssh://git@git.trust-in-soft.com:7999/use/libcheck-sources.git
+$ git remote add origin https://github.com/anne-pacalet/check.git
+$ git checkout tis
 ```
 
-TODO: to be finished...
+To change the submodule url, edit the `.gitmodules` and run `git submodule sync`
+(a new `git submodule set-url` is available in git more recent versions,
+but I do not have it yet).
+
 
